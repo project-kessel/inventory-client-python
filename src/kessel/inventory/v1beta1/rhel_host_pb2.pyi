@@ -1,4 +1,5 @@
 from google.api import field_behavior_pb2 as _field_behavior_pb2
+from validate import validate_pb2 as _validate_pb2
 from kessel.inventory.v1beta1 import metadata_pb2 as _metadata_pb2
 from kessel.inventory.v1beta1 import resource_tag_pb2 as _resource_tag_pb2
 from kessel.inventory.v1beta1 import reporter_data_pb2 as _reporter_data_pb2

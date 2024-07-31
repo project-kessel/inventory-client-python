@@ -1,4 +1,5 @@
 from google.api import annotations_pb2 as _annotations_pb2
+from google.api import field_behavior_pb2 as _field_behavior_pb2
 from kessel.inventory.v1beta1 import rhel_host_pb2 as _rhel_host_pb2
 from kessel.inventory.v1beta1 import metadata_pb2 as _metadata_pb2
 from kessel.inventory.v1beta1 import reporter_data_pb2 as _reporter_data_pb2

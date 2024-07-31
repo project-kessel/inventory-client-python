@@ -41,7 +41,7 @@ except AttributeError:
 
 from kessel.inventory.v1beta1.k8s_cluster_pb2 import *
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3kessel/inventory/v1beta1/k8s_clusters_service.proto\x12\x1c\x61pi.kessel.inventory.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a*kessel/inventory/v1beta1/k8s_cluster.proto\"W\n\x17\x43reateK8sClusterRequest\x12<\n\nk8sCluster\x18\x01 \x01(\x0b\x32(.api.kessel.inventory.v1beta1.K8sCluster\"X\n\x18\x43reateK8sClusterResponse\x12<\n\nk8sCluster\x18\x01 \x01(\x0b\x32(.api.kessel.inventory.v1beta1.K8sCluster\"i\n\x17UpdateK8sClusterRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\x12<\n\nk8sCluster\x18\x02 \x01(\x0b\x32(.api.kessel.inventory.v1beta1.K8sCluster\"\x1a\n\x18UpdateK8sClusterResponse\"+\n\x17\x44\x65leteK8sClusterRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\"\x1a\n\x18\x44\x65leteK8sClusterResponse2\xab\x04\n\x12K8sClustersService\x12\xac\x01\n\x10\x43reateK8sCluster\x12\x35.api.kessel.inventory.v1beta1.CreateK8sClusterRequest\x1a\x36.api.kessel.inventory.v1beta1.CreateK8sClusterResponse\")\x82\xd3\xe4\x93\x02#\"\x15/v1beta1/k8s_clusters:\nk8sCluster\x12\xb7\x01\n\x10UpdateK8sCluster\x12\x35.api.kessel.inventory.v1beta1.UpdateK8sClusterRequest\x1a\x36.api.kessel.inventory.v1beta1.UpdateK8sClusterResponse\"4\x82\xd3\xe4\x93\x02.\x1a /v1beta1/k8s_clusters/{resource}:\nk8sCluster\x12\xab\x01\n\x10\x44\x65leteK8sCluster\x12\x35.api.kessel.inventory.v1beta1.DeleteK8sClusterRequest\x1a\x36.api.kessel.inventory.v1beta1.DeleteK8sClusterResponse\"(\x82\xd3\xe4\x93\x02\"* /v1beta1/k8s_clusters/{resource}BF\n\x1c\x61pi.kessel.inventory.v1beta1P\x01Z$api/kessel/inventory/v1beta1;v1beta1P\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3kessel/inventory/v1beta1/k8s_clusters_service.proto\x12\x1c\x61pi.kessel.inventory.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a*kessel/inventory/v1beta1/k8s_cluster.proto\"W\n\x17\x43reateK8sClusterRequest\x12<\n\nk8sCluster\x18\x01 \x01(\x0b\x32(.api.kessel.inventory.v1beta1.K8sCluster\"X\n\x18\x43reateK8sClusterResponse\x12<\n\nk8sCluster\x18\x01 \x01(\x0b\x32(.api.kessel.inventory.v1beta1.K8sCluster\"i\n\x17UpdateK8sClusterRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\x12<\n\nk8sCluster\x18\x02 \x01(\x0b\x32(.api.kessel.inventory.v1beta1.K8sCluster\"\x1a\n\x18UpdateK8sClusterResponse\"+\n\x17\x44\x65leteK8sClusterRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\"\x1a\n\x18\x44\x65leteK8sClusterResponse2\xd5\x04\n\x12K8sClustersService\x12\xba\x01\n\x10\x43reateK8sCluster\x12\x35.api.kessel.inventory.v1beta1.CreateK8sClusterRequest\x1a\x36.api.kessel.inventory.v1beta1.CreateK8sClusterResponse\"7\x82\xd3\xe4\x93\x02\x31\"#/api/inventory/v1beta1/k8s_clusters:\nk8sCluster\x12\xc5\x01\n\x10UpdateK8sCluster\x12\x35.api.kessel.inventory.v1beta1.UpdateK8sClusterRequest\x1a\x36.api.kessel.inventory.v1beta1.UpdateK8sClusterResponse\"B\x82\xd3\xe4\x93\x02<\x1a./api/inventory/v1beta1/k8s_clusters/{resource}:\nk8sCluster\x12\xb9\x01\n\x10\x44\x65leteK8sCluster\x12\x35.api.kessel.inventory.v1beta1.DeleteK8sClusterRequest\x1a\x36.api.kessel.inventory.v1beta1.DeleteK8sClusterResponse\"6\x82\xd3\xe4\x93\x02\x30*./api/inventory/v1beta1/k8s_clusters/{resource}BF\n\x1c\x61pi.kessel.inventory.v1beta1P\x01Z$api/kessel/inventory/v1beta1;v1beta1P\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -50,11 +50,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034api.kessel.inventory.v1beta1P\001Z$api/kessel/inventory/v1beta1;v1beta1'
   _globals['_K8SCLUSTERSSERVICE'].methods_by_name['CreateK8sCluster']._loaded_options = None
-  _globals['_K8SCLUSTERSSERVICE'].methods_by_name['CreateK8sCluster']._serialized_options = b'\202\323\344\223\002#\"\025/v1beta1/k8s_clusters:\nk8sCluster'
+  _globals['_K8SCLUSTERSSERVICE'].methods_by_name['CreateK8sCluster']._serialized_options = b'\202\323\344\223\0021\"#/api/inventory/v1beta1/k8s_clusters:\nk8sCluster'
   _globals['_K8SCLUSTERSSERVICE'].methods_by_name['UpdateK8sCluster']._loaded_options = None
-  _globals['_K8SCLUSTERSSERVICE'].methods_by_name['UpdateK8sCluster']._serialized_options = b'\202\323\344\223\002.\032 /v1beta1/k8s_clusters/{resource}:\nk8sCluster'
+  _globals['_K8SCLUSTERSSERVICE'].methods_by_name['UpdateK8sCluster']._serialized_options = b'\202\323\344\223\002<\032./api/inventory/v1beta1/k8s_clusters/{resource}:\nk8sCluster'
   _globals['_K8SCLUSTERSSERVICE'].methods_by_name['DeleteK8sCluster']._loaded_options = None
-  _globals['_K8SCLUSTERSSERVICE'].methods_by_name['DeleteK8sCluster']._serialized_options = b'\202\323\344\223\002\"* /v1beta1/k8s_clusters/{resource}'
+  _globals['_K8SCLUSTERSSERVICE'].methods_by_name['DeleteK8sCluster']._serialized_options = b'\202\323\344\223\0020*./api/inventory/v1beta1/k8s_clusters/{resource}'
   _globals['_CREATEK8SCLUSTERREQUEST']._serialized_start=159
   _globals['_CREATEK8SCLUSTERREQUEST']._serialized_end=246
   _globals['_CREATEK8SCLUSTERRESPONSE']._serialized_start=248
@@ -68,5 +68,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETEK8SCLUSTERRESPONSE']._serialized_start=518
   _globals['_DELETEK8SCLUSTERRESPONSE']._serialized_end=544
   _globals['_K8SCLUSTERSSERVICE']._serialized_start=547
-  _globals['_K8SCLUSTERSSERVICE']._serialized_end=1102
+  _globals['_K8SCLUSTERSSERVICE']._serialized_end=1144
 # @@protoc_insertion_point(module_scope)

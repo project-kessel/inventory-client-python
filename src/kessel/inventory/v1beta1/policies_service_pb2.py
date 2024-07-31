@@ -33,7 +33,7 @@ except AttributeError:
 
 from kessel.inventory.v1beta1.policy_pb2 import *
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/kessel/inventory/v1beta1/policies_service.proto\x12\x1c\x61pi.kessel.inventory.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a%kessel/inventory/v1beta1/policy.proto\"K\n\x13\x43reatePolicyRequest\x12\x34\n\x06policy\x18\x01 \x01(\x0b\x32$.api.kessel.inventory.v1beta1.Policy\"L\n\x14\x43reatePolicyResponse\x12\x34\n\x06policy\x18\x01 \x01(\x0b\x32$.api.kessel.inventory.v1beta1.Policy\"]\n\x13UpdatePolicyRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\x12\x34\n\x06policy\x18\x02 \x01(\x0b\x32$.api.kessel.inventory.v1beta1.Policy\"\x16\n\x14UpdatePolicyResponse\"\'\n\x13\x44\x65letePolicyRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\"\x16\n\x14\x44\x65letePolicyResponse2\xf0\x03\n\x0fPoliciesService\x12\x98\x01\n\x0c\x43reatePolicy\x12\x31.api.kessel.inventory.v1beta1.CreatePolicyRequest\x1a\x32.api.kessel.inventory.v1beta1.CreatePolicyResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x11/v1beta1/policies:\x06policy\x12\xa3\x01\n\x0cUpdatePolicy\x12\x31.api.kessel.inventory.v1beta1.UpdatePolicyRequest\x1a\x32.api.kessel.inventory.v1beta1.UpdatePolicyResponse\",\x82\xd3\xe4\x93\x02&\x1a\x1c/v1beta1/policies/{resource}:\x06policy\x12\x9b\x01\n\x0c\x44\x65letePolicy\x12\x31.api.kessel.inventory.v1beta1.DeletePolicyRequest\x1a\x32.api.kessel.inventory.v1beta1.DeletePolicyResponse\"$\x82\xd3\xe4\x93\x02\x1e*\x1c/v1beta1/policies/{resource}BF\n\x1c\x61pi.kessel.inventory.v1beta1P\x01Z$api/kessel/inventory/v1beta1;v1beta1P\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/kessel/inventory/v1beta1/policies_service.proto\x12\x1c\x61pi.kessel.inventory.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a%kessel/inventory/v1beta1/policy.proto\"K\n\x13\x43reatePolicyRequest\x12\x34\n\x06policy\x18\x01 \x01(\x0b\x32$.api.kessel.inventory.v1beta1.Policy\"L\n\x14\x43reatePolicyResponse\x12\x34\n\x06policy\x18\x01 \x01(\x0b\x32$.api.kessel.inventory.v1beta1.Policy\"]\n\x13UpdatePolicyRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\x12\x34\n\x06policy\x18\x02 \x01(\x0b\x32$.api.kessel.inventory.v1beta1.Policy\"\x16\n\x14UpdatePolicyResponse\"\'\n\x13\x44\x65letePolicyRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\"\x16\n\x14\x44\x65letePolicyResponse2\x9a\x04\n\x0fPoliciesService\x12\xa6\x01\n\x0c\x43reatePolicy\x12\x31.api.kessel.inventory.v1beta1.CreatePolicyRequest\x1a\x32.api.kessel.inventory.v1beta1.CreatePolicyResponse\"/\x82\xd3\xe4\x93\x02)\"\x1f/api/inventory/v1beta1/policies:\x06policy\x12\xb1\x01\n\x0cUpdatePolicy\x12\x31.api.kessel.inventory.v1beta1.UpdatePolicyRequest\x1a\x32.api.kessel.inventory.v1beta1.UpdatePolicyResponse\":\x82\xd3\xe4\x93\x02\x34\x1a*/api/inventory/v1beta1/policies/{resource}:\x06policy\x12\xa9\x01\n\x0c\x44\x65letePolicy\x12\x31.api.kessel.inventory.v1beta1.DeletePolicyRequest\x1a\x32.api.kessel.inventory.v1beta1.DeletePolicyResponse\"2\x82\xd3\xe4\x93\x02,**/api/inventory/v1beta1/policies/{resource}BF\n\x1c\x61pi.kessel.inventory.v1beta1P\x01Z$api/kessel/inventory/v1beta1;v1beta1P\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,11 +42,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034api.kessel.inventory.v1beta1P\001Z$api/kessel/inventory/v1beta1;v1beta1'
   _globals['_POLICIESSERVICE'].methods_by_name['CreatePolicy']._loaded_options = None
-  _globals['_POLICIESSERVICE'].methods_by_name['CreatePolicy']._serialized_options = b'\202\323\344\223\002\033\"\021/v1beta1/policies:\006policy'
+  _globals['_POLICIESSERVICE'].methods_by_name['CreatePolicy']._serialized_options = b'\202\323\344\223\002)\"\037/api/inventory/v1beta1/policies:\006policy'
   _globals['_POLICIESSERVICE'].methods_by_name['UpdatePolicy']._loaded_options = None
-  _globals['_POLICIESSERVICE'].methods_by_name['UpdatePolicy']._serialized_options = b'\202\323\344\223\002&\032\034/v1beta1/policies/{resource}:\006policy'
+  _globals['_POLICIESSERVICE'].methods_by_name['UpdatePolicy']._serialized_options = b'\202\323\344\223\0024\032*/api/inventory/v1beta1/policies/{resource}:\006policy'
   _globals['_POLICIESSERVICE'].methods_by_name['DeletePolicy']._loaded_options = None
-  _globals['_POLICIESSERVICE'].methods_by_name['DeletePolicy']._serialized_options = b'\202\323\344\223\002\036*\034/v1beta1/policies/{resource}'
+  _globals['_POLICIESSERVICE'].methods_by_name['DeletePolicy']._serialized_options = b'\202\323\344\223\002,**/api/inventory/v1beta1/policies/{resource}'
   _globals['_CREATEPOLICYREQUEST']._serialized_start=150
   _globals['_CREATEPOLICYREQUEST']._serialized_end=225
   _globals['_CREATEPOLICYRESPONSE']._serialized_start=227
@@ -60,5 +60,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETEPOLICYRESPONSE']._serialized_start=465
   _globals['_DELETEPOLICYRESPONSE']._serialized_end=487
   _globals['_POLICIESSERVICE']._serialized_start=490
-  _globals['_POLICIESSERVICE']._serialized_end=986
+  _globals['_POLICIESSERVICE']._serialized_end=1028
 # @@protoc_insertion_point(module_scope)

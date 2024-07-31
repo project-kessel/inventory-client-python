@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from kessel.inventory.v1beta1 import rhel_host_pb2 as kessel_dot_inventory_dot_v1beta1_dot_rhel__host__pb2
 try:
   kessel_dot_inventory_dot_v1beta1_dot_metadata__pb2 = kessel_dot_inventory_dot_v1beta1_dot_rhel__host__pb2.kessel_dot_inventory_dot_v1beta1_dot_metadata__pb2
@@ -29,7 +30,7 @@ except AttributeError:
 
 from kessel.inventory.v1beta1.rhel_host_pb2 import *
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,kessel/inventory/v1beta1/hosts_service.proto\x12\x1c\x61pi.kessel.inventory.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a(kessel/inventory/v1beta1/rhel_host.proto\"M\n\x15\x43reateRHELHostRequest\x12\x34\n\x04host\x18\x01 \x01(\x0b\x32&.api.kessel.inventory.v1beta1.RHELHost\"N\n\x16\x43reateRHELHostResponse\x12\x34\n\x04host\x18\x01 \x01(\x0b\x32&.api.kessel.inventory.v1beta1.RHELHost\"_\n\x15UpdateRHELHostRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\x12\x34\n\x04host\x18\x02 \x01(\x0b\x32&.api.kessel.inventory.v1beta1.RHELHost\"\x18\n\x16UpdateRHELHostResponse\")\n\x15\x44\x65leteRHELHostRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\"\x18\n\x16\x44\x65leteRHELHostResponse2\xf2\x03\n\x0cHostsService\x12\x99\x01\n\x0e\x43reateRHELHost\x12\x33.api.kessel.inventory.v1beta1.CreateRHELHostRequest\x1a\x34.api.kessel.inventory.v1beta1.CreateRHELHostResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x0e/v1beta1/hosts:\x04host\x12\xa4\x01\n\x0eUpdateRHELHost\x12\x33.api.kessel.inventory.v1beta1.UpdateRHELHostRequest\x1a\x34.api.kessel.inventory.v1beta1.UpdateRHELHostResponse\"\'\x82\xd3\xe4\x93\x02!\x1a\x19/v1beta1/hosts/{resource}:\x04host\x12\x9e\x01\n\x0e\x44\x65leteRHELHost\x12\x33.api.kessel.inventory.v1beta1.DeleteRHELHostRequest\x1a\x34.api.kessel.inventory.v1beta1.DeleteRHELHostResponse\"!\x82\xd3\xe4\x93\x02\x1b*\x19/v1beta1/hosts/{resource}BF\n\x1c\x61pi.kessel.inventory.v1beta1P\x01Z$api/kessel/inventory/v1beta1;v1beta1P\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,kessel/inventory/v1beta1/hosts_service.proto\x12\x1c\x61pi.kessel.inventory.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a(kessel/inventory/v1beta1/rhel_host.proto\"S\n\x15\x43reateRHELHostRequest\x12:\n\x04host\x18\x01 \x01(\x0b\x32&.api.kessel.inventory.v1beta1.RHELHostB\x04\xe2\x41\x01\x02\"T\n\x16\x43reateRHELHostResponse\x12:\n\x04host\x18\x01 \x01(\x0b\x32&.api.kessel.inventory.v1beta1.RHELHostB\x04\xe2\x41\x01\x02\"k\n\x15UpdateRHELHostRequest\x12\x16\n\x08resource\x18\x01 \x01(\tB\x04\xe2\x41\x01\x02\x12:\n\x04host\x18\x02 \x01(\x0b\x32&.api.kessel.inventory.v1beta1.RHELHostB\x04\xe2\x41\x01\x02\"\x18\n\x16UpdateRHELHostResponse\"/\n\x15\x44\x65leteRHELHostRequest\x12\x16\n\x08resource\x18\x01 \x01(\tB\x04\xe2\x41\x01\x02\"\x18\n\x16\x44\x65leteRHELHostResponse2\x9c\x04\n\x0cHostsService\x12\xa7\x01\n\x0e\x43reateRHELHost\x12\x33.api.kessel.inventory.v1beta1.CreateRHELHostRequest\x1a\x34.api.kessel.inventory.v1beta1.CreateRHELHostResponse\"*\x82\xd3\xe4\x93\x02$\"\x1c/api/inventory/v1beta1/hosts:\x04host\x12\xb2\x01\n\x0eUpdateRHELHost\x12\x33.api.kessel.inventory.v1beta1.UpdateRHELHostRequest\x1a\x34.api.kessel.inventory.v1beta1.UpdateRHELHostResponse\"5\x82\xd3\xe4\x93\x02/\x1a\'/api/inventory/v1beta1/hosts/{resource}:\x04host\x12\xac\x01\n\x0e\x44\x65leteRHELHost\x12\x33.api.kessel.inventory.v1beta1.DeleteRHELHostRequest\x1a\x34.api.kessel.inventory.v1beta1.DeleteRHELHostResponse\"/\x82\xd3\xe4\x93\x02)*\'/api/inventory/v1beta1/hosts/{resource}BF\n\x1c\x61pi.kessel.inventory.v1beta1P\x01Z$api/kessel/inventory/v1beta1;v1beta1P\x02\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,24 +38,34 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'kessel.inventory.v1beta1.ho
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034api.kessel.inventory.v1beta1P\001Z$api/kessel/inventory/v1beta1;v1beta1'
+  _globals['_CREATERHELHOSTREQUEST'].fields_by_name['host']._loaded_options = None
+  _globals['_CREATERHELHOSTREQUEST'].fields_by_name['host']._serialized_options = b'\342A\001\002'
+  _globals['_CREATERHELHOSTRESPONSE'].fields_by_name['host']._loaded_options = None
+  _globals['_CREATERHELHOSTRESPONSE'].fields_by_name['host']._serialized_options = b'\342A\001\002'
+  _globals['_UPDATERHELHOSTREQUEST'].fields_by_name['resource']._loaded_options = None
+  _globals['_UPDATERHELHOSTREQUEST'].fields_by_name['resource']._serialized_options = b'\342A\001\002'
+  _globals['_UPDATERHELHOSTREQUEST'].fields_by_name['host']._loaded_options = None
+  _globals['_UPDATERHELHOSTREQUEST'].fields_by_name['host']._serialized_options = b'\342A\001\002'
+  _globals['_DELETERHELHOSTREQUEST'].fields_by_name['resource']._loaded_options = None
+  _globals['_DELETERHELHOSTREQUEST'].fields_by_name['resource']._serialized_options = b'\342A\001\002'
   _globals['_HOSTSSERVICE'].methods_by_name['CreateRHELHost']._loaded_options = None
-  _globals['_HOSTSSERVICE'].methods_by_name['CreateRHELHost']._serialized_options = b'\202\323\344\223\002\026\"\016/v1beta1/hosts:\004host'
+  _globals['_HOSTSSERVICE'].methods_by_name['CreateRHELHost']._serialized_options = b'\202\323\344\223\002$\"\034/api/inventory/v1beta1/hosts:\004host'
   _globals['_HOSTSSERVICE'].methods_by_name['UpdateRHELHost']._loaded_options = None
-  _globals['_HOSTSSERVICE'].methods_by_name['UpdateRHELHost']._serialized_options = b'\202\323\344\223\002!\032\031/v1beta1/hosts/{resource}:\004host'
+  _globals['_HOSTSSERVICE'].methods_by_name['UpdateRHELHost']._serialized_options = b'\202\323\344\223\002/\032\'/api/inventory/v1beta1/hosts/{resource}:\004host'
   _globals['_HOSTSSERVICE'].methods_by_name['DeleteRHELHost']._loaded_options = None
-  _globals['_HOSTSSERVICE'].methods_by_name['DeleteRHELHost']._serialized_options = b'\202\323\344\223\002\033*\031/v1beta1/hosts/{resource}'
-  _globals['_CREATERHELHOSTREQUEST']._serialized_start=150
-  _globals['_CREATERHELHOSTREQUEST']._serialized_end=227
-  _globals['_CREATERHELHOSTRESPONSE']._serialized_start=229
-  _globals['_CREATERHELHOSTRESPONSE']._serialized_end=307
-  _globals['_UPDATERHELHOSTREQUEST']._serialized_start=309
-  _globals['_UPDATERHELHOSTREQUEST']._serialized_end=404
-  _globals['_UPDATERHELHOSTRESPONSE']._serialized_start=406
-  _globals['_UPDATERHELHOSTRESPONSE']._serialized_end=430
-  _globals['_DELETERHELHOSTREQUEST']._serialized_start=432
-  _globals['_DELETERHELHOSTREQUEST']._serialized_end=473
-  _globals['_DELETERHELHOSTRESPONSE']._serialized_start=475
-  _globals['_DELETERHELHOSTRESPONSE']._serialized_end=499
-  _globals['_HOSTSSERVICE']._serialized_start=502
-  _globals['_HOSTSSERVICE']._serialized_end=1000
+  _globals['_HOSTSSERVICE'].methods_by_name['DeleteRHELHost']._serialized_options = b'\202\323\344\223\002)*\'/api/inventory/v1beta1/hosts/{resource}'
+  _globals['_CREATERHELHOSTREQUEST']._serialized_start=183
+  _globals['_CREATERHELHOSTREQUEST']._serialized_end=266
+  _globals['_CREATERHELHOSTRESPONSE']._serialized_start=268
+  _globals['_CREATERHELHOSTRESPONSE']._serialized_end=352
+  _globals['_UPDATERHELHOSTREQUEST']._serialized_start=354
+  _globals['_UPDATERHELHOSTREQUEST']._serialized_end=461
+  _globals['_UPDATERHELHOSTRESPONSE']._serialized_start=463
+  _globals['_UPDATERHELHOSTRESPONSE']._serialized_end=487
+  _globals['_DELETERHELHOSTREQUEST']._serialized_start=489
+  _globals['_DELETERHELHOSTREQUEST']._serialized_end=536
+  _globals['_DELETERHELHOSTRESPONSE']._serialized_start=538
+  _globals['_DELETERHELHOSTRESPONSE']._serialized_end=562
+  _globals['_HOSTSSERVICE']._serialized_start=565
+  _globals['_HOSTSSERVICE']._serialized_end=1105
 # @@protoc_insertion_point(module_scope)
