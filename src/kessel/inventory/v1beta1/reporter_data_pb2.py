@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,kessel/inventory/v1beta1/reporter_data.proto\x12\x1c\x61pi.kessel.inventory.v1beta1\"\x8c\x03\n\x0cReporterData\x12V\n\rreporter_type\x18\xd8\x8f\x99u \x01(\x0e\x32<.api.kessel.inventory.v1beta1.ReporterData.Reporter_typeEnum\x12\x16\n\x0breporter_is\x18\xb8\xd5\xfar \x01(\t\x12\x17\n\x0c\x63onsole_href\x18\x94\xa2\xc6\x45 \x01(\t\x12\x14\n\x08\x61pi_href\x18\xb1\xfc\x91\xcd\x01 \x01(\t\x12\x1c\n\x10resourceid_alias\x18\xbd\xb8\xd9\xf2\x01 \x01(\t\x12\x1c\n\x10reporter_version\x18\xfa\xee\xc8\x80\x01 \x01(\t\"\xa0\x01\n\x11Reporter_typeEnum\x12\x19\n\x15Reporter_typeEnum_ACM\x10\x00\x12\x19\n\x15Reporter_typeEnum_HBI\x10\x01\x12\x19\n\x15Reporter_typeEnum_OCM\x10\x02\x12\x1b\n\x17Reporter_typeEnum_OTHER\x10\x03\x12\x1d\n\x19Reporter_typeEnum_UNKNOWN\x10\x04\x42\x46\n\x1c\x61pi.kessel.inventory.v1beta1P\x01Z$api/kessel/inventory/v1beta1;v1beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,kessel/inventory/v1beta1/reporter_data.proto\x12\x1c\x61pi.kessel.inventory.v1beta1\"\x95\x03\n\x0cReporterData\x12V\n\rreporter_type\x18\xd8\x8f\x99u \x01(\x0e\x32<.api.kessel.inventory.v1beta1.ReporterData.Reporter_typeEnum\x12\x1f\n\x14reporter_instance_id\x18\xb8\xd5\xfar \x01(\t\x12\x17\n\x0c\x63onsole_href\x18\x94\xa2\xc6\x45 \x01(\t\x12\x14\n\x08\x61pi_href\x18\xb1\xfc\x91\xcd\x01 \x01(\t\x12\x1c\n\x10resourceid_alias\x18\xbd\xb8\xd9\xf2\x01 \x01(\t\x12\x1c\n\x10reporter_version\x18\xfa\xee\xc8\x80\x01 \x01(\t\"\xa0\x01\n\x11Reporter_typeEnum\x12\x19\n\x15Reporter_typeEnum_ACM\x10\x00\x12\x19\n\x15Reporter_typeEnum_HBI\x10\x01\x12\x19\n\x15Reporter_typeEnum_OCM\x10\x02\x12\x1b\n\x17Reporter_typeEnum_OTHER\x10\x03\x12\x1d\n\x19Reporter_typeEnum_UNKNOWN\x10\x04\x42\x46\n\x1c\x61pi.kessel.inventory.v1beta1P\x01Z$api/kessel/inventory/v1beta1;v1beta1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,7 +23,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034api.kessel.inventory.v1beta1P\001Z$api/kessel/inventory/v1beta1;v1beta1'
   _globals['_REPORTERDATA']._serialized_start=79
-  _globals['_REPORTERDATA']._serialized_end=475
-  _globals['_REPORTERDATA_REPORTER_TYPEENUM']._serialized_start=315
-  _globals['_REPORTERDATA_REPORTER_TYPEENUM']._serialized_end=475
+  _globals['_REPORTERDATA']._serialized_end=484
+  _globals['_REPORTERDATA_REPORTER_TYPEENUM']._serialized_start=324
+  _globals['_REPORTERDATA_REPORTER_TYPEENUM']._serialized_end=484
 # @@protoc_insertion_point(module_scope)

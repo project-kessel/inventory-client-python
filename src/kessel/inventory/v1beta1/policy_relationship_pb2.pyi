@@ -22,7 +22,7 @@ class PolicyRelationship(_message.Message):
     CLUSTER_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     relationship_type: str
-    policy_id: str
-    cluster_id: str
+    policy_id: int
+    cluster_id: int
     status: PolicyRelationship.StatusEnum
-    def __init__(self, relationship_type: _Optional[str] = ..., policy_id: _Optional[str] = ..., cluster_id: _Optional[str] = ..., status: _Optional[_Union[PolicyRelationship.StatusEnum, str]] = ...) -> None: ...
+    def __init__(self, relationship_type: _Optional[str] = ..., policy_id: _Optional[int] = ..., cluster_id: _Optional[int] = ..., status: _Optional[_Union[PolicyRelationship.StatusEnum, str]] = ...) -> None: ...

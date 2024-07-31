@@ -13,12 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from kessel.inventory.v1beta1 import error_pb2 as kessel_dot_inventory_dot_v1beta1_dot_error__pb2
 from kessel.inventory.v1beta1 import k8s_cluster_pb2 as kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2
-try:
-  kessel_dot_inventory_dot_v1beta1_dot_common__attributes__reporters__inner__pb2 = kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2.kessel_dot_inventory_dot_v1beta1_dot_common__attributes__reporters__inner__pb2
-except AttributeError:
-  kessel_dot_inventory_dot_v1beta1_dot_common__attributes__reporters__inner__pb2 = kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2.kessel.inventory.v1beta1.common_attributes_reporters_inner_pb2
 try:
   kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__detail__pb2 = kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2.kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__detail__pb2
 except AttributeError:
@@ -32,18 +27,21 @@ try:
 except AttributeError:
   kessel_dot_inventory_dot_v1beta1_dot_resource__tag__pb2 = kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2.kessel.inventory.v1beta1.resource_tag_pb2
 try:
-  kessel_dot_inventory_dot_v1beta1_dot_reporter__data__pb2 = kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2.kessel_dot_inventory_dot_v1beta1_dot_reporter__data__pb2
+  kessel_dot_inventory_dot_v1beta1_dot_metadata__pb2 = kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2.kessel_dot_inventory_dot_v1beta1_dot_metadata__pb2
 except AttributeError:
-  kessel_dot_inventory_dot_v1beta1_dot_reporter__data__pb2 = kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2.kessel.inventory.v1beta1.reporter_data_pb2
+  kessel_dot_inventory_dot_v1beta1_dot_metadata__pb2 = kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2.kessel.inventory.v1beta1.metadata_pb2
 try:
   kessel_dot_inventory_dot_v1beta1_dot_resource__tag__pb2 = kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2.kessel_dot_inventory_dot_v1beta1_dot_resource__tag__pb2
 except AttributeError:
   kessel_dot_inventory_dot_v1beta1_dot_resource__tag__pb2 = kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2.kessel.inventory.v1beta1.resource_tag_pb2
+try:
+  kessel_dot_inventory_dot_v1beta1_dot_reporter__data__pb2 = kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2.kessel_dot_inventory_dot_v1beta1_dot_reporter__data__pb2
+except AttributeError:
+  kessel_dot_inventory_dot_v1beta1_dot_reporter__data__pb2 = kessel_dot_inventory_dot_v1beta1_dot_k8s__cluster__pb2.kessel.inventory.v1beta1.reporter_data_pb2
 
-from kessel.inventory.v1beta1.error_pb2 import *
 from kessel.inventory.v1beta1.k8s_cluster_pb2 import *
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3kessel/inventory/v1beta1/k8s_clusters_service.proto\x12\x1c\x61pi.kessel.inventory.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a$kessel/inventory/v1beta1/error.proto\x1a*kessel/inventory/v1beta1/k8s_cluster.proto\"W\n\x17\x43reateK8sClusterRequest\x12<\n\nk8sCluster\x18\x01 \x01(\x0b\x32(.api.kessel.inventory.v1beta1.K8sCluster\"X\n\x18\x43reateK8sClusterResponse\x12<\n\nk8sCluster\x18\x01 \x01(\x0b\x32(.api.kessel.inventory.v1beta1.K8sCluster\"i\n\x17UpdateK8sClusterRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\x12<\n\nk8sCluster\x18\x02 \x01(\x0b\x32(.api.kessel.inventory.v1beta1.K8sCluster\"\x1a\n\x18UpdateK8sClusterResponse\"+\n\x17\x44\x65leteK8sClusterRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\"\x1a\n\x18\x44\x65leteK8sClusterResponse2\xab\x04\n\x12K8sClustersService\x12\xac\x01\n\x10\x43reateK8sCluster\x12\x35.api.kessel.inventory.v1beta1.CreateK8sClusterRequest\x1a\x36.api.kessel.inventory.v1beta1.CreateK8sClusterResponse\")\x82\xd3\xe4\x93\x02#\"\x15/v1beta1/k8s_clusters:\nk8sCluster\x12\xb7\x01\n\x10UpdateK8sCluster\x12\x35.api.kessel.inventory.v1beta1.UpdateK8sClusterRequest\x1a\x36.api.kessel.inventory.v1beta1.UpdateK8sClusterResponse\"4\x82\xd3\xe4\x93\x02.\x1a /v1beta1/k8s_clusters/{resource}:\nk8sCluster\x12\xab\x01\n\x10\x44\x65leteK8sCluster\x12\x35.api.kessel.inventory.v1beta1.DeleteK8sClusterRequest\x1a\x36.api.kessel.inventory.v1beta1.DeleteK8sClusterResponse\"(\x82\xd3\xe4\x93\x02\"* /v1beta1/k8s_clusters/{resource}BF\n\x1c\x61pi.kessel.inventory.v1beta1P\x01Z$api/kessel/inventory/v1beta1;v1beta1P\x01P\x02\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3kessel/inventory/v1beta1/k8s_clusters_service.proto\x12\x1c\x61pi.kessel.inventory.v1beta1\x1a\x1cgoogle/api/annotations.proto\x1a*kessel/inventory/v1beta1/k8s_cluster.proto\"W\n\x17\x43reateK8sClusterRequest\x12<\n\nk8sCluster\x18\x01 \x01(\x0b\x32(.api.kessel.inventory.v1beta1.K8sCluster\"X\n\x18\x43reateK8sClusterResponse\x12<\n\nk8sCluster\x18\x01 \x01(\x0b\x32(.api.kessel.inventory.v1beta1.K8sCluster\"i\n\x17UpdateK8sClusterRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\x12<\n\nk8sCluster\x18\x02 \x01(\x0b\x32(.api.kessel.inventory.v1beta1.K8sCluster\"\x1a\n\x18UpdateK8sClusterResponse\"+\n\x17\x44\x65leteK8sClusterRequest\x12\x10\n\x08resource\x18\x01 \x01(\t\"\x1a\n\x18\x44\x65leteK8sClusterResponse2\xab\x04\n\x12K8sClustersService\x12\xac\x01\n\x10\x43reateK8sCluster\x12\x35.api.kessel.inventory.v1beta1.CreateK8sClusterRequest\x1a\x36.api.kessel.inventory.v1beta1.CreateK8sClusterResponse\")\x82\xd3\xe4\x93\x02#\"\x15/v1beta1/k8s_clusters:\nk8sCluster\x12\xb7\x01\n\x10UpdateK8sCluster\x12\x35.api.kessel.inventory.v1beta1.UpdateK8sClusterRequest\x1a\x36.api.kessel.inventory.v1beta1.UpdateK8sClusterResponse\"4\x82\xd3\xe4\x93\x02.\x1a /v1beta1/k8s_clusters/{resource}:\nk8sCluster\x12\xab\x01\n\x10\x44\x65leteK8sCluster\x12\x35.api.kessel.inventory.v1beta1.DeleteK8sClusterRequest\x1a\x36.api.kessel.inventory.v1beta1.DeleteK8sClusterResponse\"(\x82\xd3\xe4\x93\x02\"* /v1beta1/k8s_clusters/{resource}BF\n\x1c\x61pi.kessel.inventory.v1beta1P\x01Z$api/kessel/inventory/v1beta1;v1beta1P\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -57,18 +55,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_K8SCLUSTERSSERVICE'].methods_by_name['UpdateK8sCluster']._serialized_options = b'\202\323\344\223\002.\032 /v1beta1/k8s_clusters/{resource}:\nk8sCluster'
   _globals['_K8SCLUSTERSSERVICE'].methods_by_name['DeleteK8sCluster']._loaded_options = None
   _globals['_K8SCLUSTERSSERVICE'].methods_by_name['DeleteK8sCluster']._serialized_options = b'\202\323\344\223\002\"* /v1beta1/k8s_clusters/{resource}'
-  _globals['_CREATEK8SCLUSTERREQUEST']._serialized_start=197
-  _globals['_CREATEK8SCLUSTERREQUEST']._serialized_end=284
-  _globals['_CREATEK8SCLUSTERRESPONSE']._serialized_start=286
-  _globals['_CREATEK8SCLUSTERRESPONSE']._serialized_end=374
-  _globals['_UPDATEK8SCLUSTERREQUEST']._serialized_start=376
-  _globals['_UPDATEK8SCLUSTERREQUEST']._serialized_end=481
-  _globals['_UPDATEK8SCLUSTERRESPONSE']._serialized_start=483
-  _globals['_UPDATEK8SCLUSTERRESPONSE']._serialized_end=509
-  _globals['_DELETEK8SCLUSTERREQUEST']._serialized_start=511
-  _globals['_DELETEK8SCLUSTERREQUEST']._serialized_end=554
-  _globals['_DELETEK8SCLUSTERRESPONSE']._serialized_start=556
-  _globals['_DELETEK8SCLUSTERRESPONSE']._serialized_end=582
-  _globals['_K8SCLUSTERSSERVICE']._serialized_start=585
-  _globals['_K8SCLUSTERSSERVICE']._serialized_end=1140
+  _globals['_CREATEK8SCLUSTERREQUEST']._serialized_start=159
+  _globals['_CREATEK8SCLUSTERREQUEST']._serialized_end=246
+  _globals['_CREATEK8SCLUSTERRESPONSE']._serialized_start=248
+  _globals['_CREATEK8SCLUSTERRESPONSE']._serialized_end=336
+  _globals['_UPDATEK8SCLUSTERREQUEST']._serialized_start=338
+  _globals['_UPDATEK8SCLUSTERREQUEST']._serialized_end=443
+  _globals['_UPDATEK8SCLUSTERRESPONSE']._serialized_start=445
+  _globals['_UPDATEK8SCLUSTERRESPONSE']._serialized_end=471
+  _globals['_DELETEK8SCLUSTERREQUEST']._serialized_start=473
+  _globals['_DELETEK8SCLUSTERREQUEST']._serialized_end=516
+  _globals['_DELETEK8SCLUSTERRESPONSE']._serialized_start=518
+  _globals['_DELETEK8SCLUSTERRESPONSE']._serialized_end=544
+  _globals['_K8SCLUSTERSSERVICE']._serialized_start=547
+  _globals['_K8SCLUSTERSSERVICE']._serialized_end=1102
 # @@protoc_insertion_point(module_scope)

@@ -1,13 +1,10 @@
 from google.api import annotations_pb2 as _annotations_pb2
-from kessel.inventory.v1beta1 import error_pb2 as _error_pb2
 from kessel.inventory.v1beta1 import rhel_host_pb2 as _rhel_host_pb2
-from kessel.inventory.v1beta1 import common_attributes_reporters_inner_pb2 as _common_attributes_reporters_inner_pb2
+from kessel.inventory.v1beta1 import metadata_pb2 as _metadata_pb2
 from kessel.inventory.v1beta1 import reporter_data_pb2 as _reporter_data_pb2
-from kessel.inventory.v1beta1 import resource_tag_pb2 as _resource_tag_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
-from kessel.inventory.v1beta1.error_pb2 import Error as Error
 from kessel.inventory.v1beta1.rhel_host_pb2 import RHELHost as RHELHost
 
 DESCRIPTOR: _descriptor.FileDescriptor
