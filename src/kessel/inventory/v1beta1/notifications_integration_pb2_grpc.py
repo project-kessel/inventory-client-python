@@ -4,7 +4,7 @@ import grpc
 import warnings
 
 
-GRPC_GENERATED_VERSION = '1.65.1'
+GRPC_GENERATED_VERSION = '1.65.2'
 GRPC_VERSION = grpc.__version__
 EXPECTED_ERROR_RELEASE = '1.66.0'
 SCHEDULED_RELEASE_DATE = 'August 6, 2024'
@@ -19,7 +19,7 @@ except ImportError:
 if _version_not_supported:
     warnings.warn(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in kessel/inventory/v1beta1/common_attributes_pb2_grpc.py depends on'
+        + f' but the generated code in kessel/inventory/v1beta1/notifications_integration_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
