@@ -4,7 +4,6 @@ This package is generated grpc python client from inventory-api proto files.
 
 ## Installation
 
-This library is not yet available on pypi, but once it is, you can install it with the following command:
 ```shell
 $ python -m pip install inventory-grpc-clients-python-kessel-project
 ```
