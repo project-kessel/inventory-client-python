@@ -1,0 +1,47 @@
+name: sync-protos
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *' # every 6 hours
+
+jobs:
+  sync:
+    name: Sync protos from inventory-api
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Clone inventory-api
+        run: git clone --depth=1 https://github.com/project-kessel/inventory-api.git
+
+      - name: Copy proto files
+        run: |
+          mkdir -p protos/kessel/inventory/v1beta1
+          cp -r inventory-api/api/kessel/inventory/v1beta1/* protos/kessel/inventory/v1beta1/
+
+      - name: Clean up
+        run: rm -rf inventory-api
+
+      - name: (Optional) Regenerate Python gRPC client code
+        run: |
+          python3 -m pip install grpcio grpcio-tools mypy-protobuf
+          python3 -m grpc_tools.protoc \
+            -Iprotos \
+            --python_out=src \
+            --grpc_python_out=src \
+            --mypy_out=src \
+            protos/kessel/inventory/v1beta1/*.proto
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'Sync updated proto files'
+          title: 'Update protos from inventory-api'
+          branch: auto/sync-protos
