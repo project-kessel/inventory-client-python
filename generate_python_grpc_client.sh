@@ -2,68 +2,31 @@
 
 set -e
 
-GITHUB_REPO_URL="https://github.com/project-kessel/inventory-api"
-PROTO_FOLDER="api/kessel/inventory/v1beta1"
-TEMP_DIR=$(mktemp -d)
-VENV_DIR="$TEMP_DIR/venv"
-OUTPUT_DIR=$(pwd)
+echo "Creating and activating the virtual environment"
+python3 -m venv venv
+source venv/bin/activate
 
-function cleanup {
-  echo "Cleaning up temporary files..."
-  rm -rf "$TEMP_DIR"
-  echo "Done."
-}
+echo "Installing the inventory api python client"
+python3 -m pip install project-kessel-inventory-api-grpc-python --extra-index-url https://buf.build/gen/python
 
-trap cleanup EXIT
+echo "Installing package locally"
+pip install .
 
-cd "$TEMP_DIR"
+echo "Copying files to src directory for buf validation"
+mkdir -p src/buf/validate
+touch src/buf/__init__.py
+touch src/buf/validate/__init__.py
+cp -r venv/lib/python*/site-packages/buf/validate/* src/buf/validate
 
-echo "Initializing an empty repository and setting sparse-checkout for $PROTO_FOLDER"
-git init
-git remote add origin "$GITHUB_REPO_URL"
-git config core.sparseCheckout true
-
-echo "$PROTO_FOLDER/*" >> .git/info/sparse-checkout
-echo "third_party/*" >> .git/info/sparse-checkout
-
-git pull origin main
-
-if command -v python3 &>/dev/null; then
-  PYTHON_CMD=python3
-elif command -v python &>/dev/null; then
-  PYTHON_CMD=python
-else
-  echo "Python is not installed. Please install Python and try again."
-  exit 1
-fi
-
-echo "Using Python command: $PYTHON_CMD"
-
-echo "Creating Python virtual environment..."
-$PYTHON_CMD -m venv "$VENV_DIR"
-
-source "$VENV_DIR/bin/activate"
-
-echo "Installing required packages..."
-pip install grpcio-tools
-
-echo "Generating Python client from proto files..."
-
-$PYTHON_CMD -m grpc_tools.protoc \
-            -I"$TEMP_DIR/third_party/"  \
-            -Ikessel/inventory/v1beta1="$TEMP_DIR/$PROTO_FOLDER"  \
-            --python_out="$OUTPUT_DIR"/src \
-            --pyi_out="$OUTPUT_DIR"/src \
-            --grpc_python_out="$OUTPUT_DIR"/src \
-            "$TEMP_DIR/$PROTO_FOLDER"/*.proto \
-            "$TEMP_DIR/third_party/validate/"validate.proto
-
-echo "Python client generated in $TEMP_DIR"
+echo "Copying files to src directory"
+cp -r venv/lib/python*/site-packages/kessel/inventory/v1/* src/kessel/inventory/v1/
+cp -r venv/lib/python*/site-packages/kessel/inventory/v1beta1/* src/kessel/inventory/v1beta1/
+cp -r venv/lib/python*/site-packages/kessel/inventory/v1beta2/* src/kessel/inventory/v1beta2/
 
 echo "Deactivating and removing the virtual environment..."
 deactivate
-rm -rf "$VENV_DIR"
 
-find "$TEMP_DIR" -name "*.py"
+echo "Removing the virtual environment"
+rm -rf "venv"
 
-echo "Script completed successfully."
+echo "Python client successfully updated"

@@ -4,7 +4,6 @@ This package is generated grpc python client from inventory-api proto files.
 
 ## Installation
 
-This library is not yet available on pypi, but once it is, you can install it with the following command:
 ```shell
 $ python -m pip install inventory-grpc-clients-python-kessel-project
 ```
@@ -22,14 +21,14 @@ Run following commands in the root directory.
 ### 3. Push the new version of the package to PyPI
 
 ```
- ./generate_python_grpc_client.sh <new_version>
+ ./publish_to_pypi.sh <new_version>
 ```
 example:
 ```
- ./generate_python_grpc_client.sh 0.8.10
+ ./publish_to_pypi.sh 0.8.10
 ```
 
-NOTE: When `./generate_python_grpc_client.sh` is executed without an argument, the current version is displayed.
+NOTE: When `./publish_to_pypi.sh` is executed without an argument, the current version is displayed.
 
 ### 4. Create PR with new version of python grpc client
 The version is included in the commit.
