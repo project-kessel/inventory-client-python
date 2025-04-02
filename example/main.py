@@ -20,12 +20,12 @@ def run():
     })
 
     resource = resource_pb2.Resource(
-        resource_type="k8s_cluster",
+        resource_type="host",
         reporter_data=reporter_data_pb2.ReporterData(
-            reporter_type="OCM",
+            reporter_type="HBI",
             reporter_instance_id="user@example.com",
             reporter_version="0.1",
-            local_resource_id="2",
+            local_resource_id="25",
             api_href="www.example.com",
             console_href="www.rhel.example.com",
             resource_data=resource_data_struct
@@ -38,10 +38,20 @@ def run():
         resource=resource
     )
 
+    delReq = resource_service_pb2.DeleteResourceRequest(
+        reporter_type="HBI",
+        local_resource_id="25",
+
+    )
+
     # Send gRPC request
     try:
         response = stub.ReportResource(request)
         print("Resource reported successfully")
+        print(response)
+
+        response = stub.DeleteResource(delReq)
+        print("Resource deleted successfully")
         print(response)
     except grpc.RpcError as e:
         print("gRPC error occurred:")
