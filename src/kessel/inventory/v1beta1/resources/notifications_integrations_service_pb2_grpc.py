@@ -24,6 +24,11 @@ class KesselNotificationsIntegrationServiceStub(object):
                 request_serializer=kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.UpdateNotificationsIntegrationRequest.SerializeToString,
                 response_deserializer=kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.UpdateNotificationsIntegrationResponse.FromString,
                 _registered_method=True)
+        self.UpdateNotificationsIntegrations = channel.stream_unary(
+                '/kessel.inventory.v1beta1.resources.KesselNotificationsIntegrationService/UpdateNotificationsIntegrations',
+                request_serializer=kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.UpdateNotificationsIntegrationsRequest.SerializeToString,
+                response_deserializer=kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.UpdateNotificationsIntegrationsResponse.FromString,
+                _registered_method=True)
         self.DeleteNotificationsIntegration = channel.unary_unary(
                 '/kessel.inventory.v1beta1.resources.KesselNotificationsIntegrationService/DeleteNotificationsIntegration',
                 request_serializer=kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.DeleteNotificationsIntegrationRequest.SerializeToString,
@@ -47,6 +52,13 @@ class KesselNotificationsIntegrationServiceServicer(object):
 
     def UpdateNotificationsIntegration(self, request, context):
         """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateNotificationsIntegrations(self, request_iterator, context):
+        """deprecated Temporary streaming update endpoint
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -75,6 +87,11 @@ def add_KesselNotificationsIntegrationServiceServicer_to_server(servicer, server
                     servicer.UpdateNotificationsIntegration,
                     request_deserializer=kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.UpdateNotificationsIntegrationRequest.FromString,
                     response_serializer=kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.UpdateNotificationsIntegrationResponse.SerializeToString,
+            ),
+            'UpdateNotificationsIntegrations': grpc.stream_unary_rpc_method_handler(
+                    servicer.UpdateNotificationsIntegrations,
+                    request_deserializer=kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.UpdateNotificationsIntegrationsRequest.FromString,
+                    response_serializer=kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.UpdateNotificationsIntegrationsResponse.SerializeToString,
             ),
             'DeleteNotificationsIntegration': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteNotificationsIntegration,
@@ -141,6 +158,33 @@ class KesselNotificationsIntegrationService(object):
             '/kessel.inventory.v1beta1.resources.KesselNotificationsIntegrationService/UpdateNotificationsIntegration',
             kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.UpdateNotificationsIntegrationRequest.SerializeToString,
             kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.UpdateNotificationsIntegrationResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateNotificationsIntegrations(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(
+            request_iterator,
+            target,
+            '/kessel.inventory.v1beta1.resources.KesselNotificationsIntegrationService/UpdateNotificationsIntegrations',
+            kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.UpdateNotificationsIntegrationsRequest.SerializeToString,
+            kessel_dot_inventory_dot_v1beta1_dot_resources_dot_notifications__integrations__service__pb2.UpdateNotificationsIntegrationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

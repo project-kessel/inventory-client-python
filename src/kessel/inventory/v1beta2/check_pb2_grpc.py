@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from kessel.inventory.v1beta2.authz import check_pb2 as kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2
+from kessel.inventory.v1beta2 import check_pb2 as kessel_dot_inventory_dot_v1beta2_dot_check__pb2
 
 
 class KesselCheckServiceStub(object):
@@ -15,14 +15,14 @@ class KesselCheckServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Check = channel.unary_unary(
-                '/kessel.inventory.v1beta2.authz.KesselCheckService/Check',
-                request_serializer=kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2.CheckRequest.SerializeToString,
-                response_deserializer=kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2.CheckResponse.FromString,
+                '/kessel.inventory.v1beta2.KesselCheckService/Check',
+                request_serializer=kessel_dot_inventory_dot_v1beta2_dot_check__pb2.CheckRequest.SerializeToString,
+                response_deserializer=kessel_dot_inventory_dot_v1beta2_dot_check__pb2.CheckResponse.FromString,
                 _registered_method=True)
         self.CheckForUpdate = channel.unary_unary(
-                '/kessel.inventory.v1beta2.authz.KesselCheckService/CheckForUpdate',
-                request_serializer=kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2.CheckForUpdateRequest.SerializeToString,
-                response_deserializer=kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2.CheckForUpdateResponse.FromString,
+                '/kessel.inventory.v1beta2.KesselCheckService/CheckForUpdate',
+                request_serializer=kessel_dot_inventory_dot_v1beta2_dot_check__pb2.CheckForUpdateRequest.SerializeToString,
+                response_deserializer=kessel_dot_inventory_dot_v1beta2_dot_check__pb2.CheckForUpdateResponse.FromString,
                 _registered_method=True)
 
 
@@ -48,19 +48,19 @@ def add_KesselCheckServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Check': grpc.unary_unary_rpc_method_handler(
                     servicer.Check,
-                    request_deserializer=kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2.CheckRequest.FromString,
-                    response_serializer=kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2.CheckResponse.SerializeToString,
+                    request_deserializer=kessel_dot_inventory_dot_v1beta2_dot_check__pb2.CheckRequest.FromString,
+                    response_serializer=kessel_dot_inventory_dot_v1beta2_dot_check__pb2.CheckResponse.SerializeToString,
             ),
             'CheckForUpdate': grpc.unary_unary_rpc_method_handler(
                     servicer.CheckForUpdate,
-                    request_deserializer=kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2.CheckForUpdateRequest.FromString,
-                    response_serializer=kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2.CheckForUpdateResponse.SerializeToString,
+                    request_deserializer=kessel_dot_inventory_dot_v1beta2_dot_check__pb2.CheckForUpdateRequest.FromString,
+                    response_serializer=kessel_dot_inventory_dot_v1beta2_dot_check__pb2.CheckForUpdateResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'kessel.inventory.v1beta2.authz.KesselCheckService', rpc_method_handlers)
+            'kessel.inventory.v1beta2.KesselCheckService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('kessel.inventory.v1beta2.authz.KesselCheckService', rpc_method_handlers)
+    server.add_registered_method_handlers('kessel.inventory.v1beta2.KesselCheckService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -81,9 +81,9 @@ class KesselCheckService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/kessel.inventory.v1beta2.authz.KesselCheckService/Check',
-            kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2.CheckRequest.SerializeToString,
-            kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2.CheckResponse.FromString,
+            '/kessel.inventory.v1beta2.KesselCheckService/Check',
+            kessel_dot_inventory_dot_v1beta2_dot_check__pb2.CheckRequest.SerializeToString,
+            kessel_dot_inventory_dot_v1beta2_dot_check__pb2.CheckResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -108,9 +108,9 @@ class KesselCheckService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/kessel.inventory.v1beta2.authz.KesselCheckService/CheckForUpdate',
-            kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2.CheckForUpdateRequest.SerializeToString,
-            kessel_dot_inventory_dot_v1beta2_dot_authz_dot_check__pb2.CheckForUpdateResponse.FromString,
+            '/kessel.inventory.v1beta2.KesselCheckService/CheckForUpdate',
+            kessel_dot_inventory_dot_v1beta2_dot_check__pb2.CheckForUpdateRequest.SerializeToString,
+            kessel_dot_inventory_dot_v1beta2_dot_check__pb2.CheckForUpdateResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -1,5 +1,5 @@
 from google.api import annotations_pb2 as _annotations_pb2
-from kessel.inventory.v1beta2.authz import common_pb2 as _common_pb2
+from kessel.inventory.v1beta2 import common_pb2 as _common_pb2
 from buf.validate import validate_pb2 as _validate_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

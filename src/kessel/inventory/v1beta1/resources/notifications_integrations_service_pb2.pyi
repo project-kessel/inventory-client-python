@@ -26,9 +26,21 @@ class UpdateNotificationsIntegrationRequest(_message.Message):
     integration: _notifications_integration_pb2.NotificationsIntegration
     def __init__(self, integration: _Optional[_Union[_notifications_integration_pb2.NotificationsIntegration, _Mapping]] = ...) -> None: ...
 
+class UpdateNotificationsIntegrationsRequest(_message.Message):
+    __slots__ = ("integration",)
+    INTEGRATION_FIELD_NUMBER: _ClassVar[int]
+    integration: _notifications_integration_pb2.NotificationsIntegration
+    def __init__(self, integration: _Optional[_Union[_notifications_integration_pb2.NotificationsIntegration, _Mapping]] = ...) -> None: ...
+
 class UpdateNotificationsIntegrationResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class UpdateNotificationsIntegrationsResponse(_message.Message):
+    __slots__ = ("upserts_completed",)
+    UPSERTS_COMPLETED_FIELD_NUMBER: _ClassVar[int]
+    upserts_completed: int
+    def __init__(self, upserts_completed: _Optional[int] = ...) -> None: ...
 
 class DeleteNotificationsIntegrationRequest(_message.Message):
     __slots__ = ("reporter_data",)
