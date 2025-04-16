@@ -19,9 +19,9 @@ touch src/buf/validate/__init__.py
 cp -r venv/lib/python*/site-packages/buf/validate/* src/buf/validate
 
 echo "Copying files to src directory"
-cp -r venv/lib/python*/site-packages/kessel/inventory/v1/* src/kessel/inventory/v1/
-cp -r venv/lib/python*/site-packages/kessel/inventory/v1beta1/* src/kessel/inventory/v1beta1/
-cp -r venv/lib/python*/site-packages/kessel/inventory/v1beta2/* src/kessel/inventory/v1beta2/
+mkdir -p src/kessel/inventory/
+touch src/kessel/inventory/__init__.py
+cp -r venv/lib/python*/site-packages/kessel/inventory/* src/kessel/inventory/
 
 echo "Deactivating and removing the virtual environment..."
 deactivate
