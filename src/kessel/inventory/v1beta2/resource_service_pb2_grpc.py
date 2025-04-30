@@ -2,7 +2,10 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from kessel.inventory.v1beta2 import resource_service_pb2 as kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2
+from kessel.inventory.v1beta2 import delete_resource_request_pb2 as kessel_dot_inventory_dot_v1beta2_dot_delete__resource__request__pb2
+from kessel.inventory.v1beta2 import delete_resource_response_pb2 as kessel_dot_inventory_dot_v1beta2_dot_delete__resource__response__pb2
+from kessel.inventory.v1beta2 import report_resource_request_pb2 as kessel_dot_inventory_dot_v1beta2_dot_report__resource__request__pb2
+from kessel.inventory.v1beta2 import report_resource_response_pb2 as kessel_dot_inventory_dot_v1beta2_dot_report__resource__response__pb2
 
 
 class KesselResourceServiceStub(object):
@@ -16,13 +19,13 @@ class KesselResourceServiceStub(object):
         """
         self.ReportResource = channel.unary_unary(
                 '/kessel.inventory.v1beta2.KesselResourceService/ReportResource',
-                request_serializer=kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2.ReportResourceRequest.SerializeToString,
-                response_deserializer=kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2.ReportResourceResponse.FromString,
+                request_serializer=kessel_dot_inventory_dot_v1beta2_dot_report__resource__request__pb2.ReportResourceRequest.SerializeToString,
+                response_deserializer=kessel_dot_inventory_dot_v1beta2_dot_report__resource__response__pb2.ReportResourceResponse.FromString,
                 _registered_method=True)
         self.DeleteResource = channel.unary_unary(
                 '/kessel.inventory.v1beta2.KesselResourceService/DeleteResource',
-                request_serializer=kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2.DeleteResourceRequest.SerializeToString,
-                response_deserializer=kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2.DeleteResourceResponse.FromString,
+                request_serializer=kessel_dot_inventory_dot_v1beta2_dot_delete__resource__request__pb2.DeleteResourceRequest.SerializeToString,
+                response_deserializer=kessel_dot_inventory_dot_v1beta2_dot_delete__resource__response__pb2.DeleteResourceResponse.FromString,
                 _registered_method=True)
 
 
@@ -46,13 +49,13 @@ def add_KesselResourceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ReportResource': grpc.unary_unary_rpc_method_handler(
                     servicer.ReportResource,
-                    request_deserializer=kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2.ReportResourceRequest.FromString,
-                    response_serializer=kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2.ReportResourceResponse.SerializeToString,
+                    request_deserializer=kessel_dot_inventory_dot_v1beta2_dot_report__resource__request__pb2.ReportResourceRequest.FromString,
+                    response_serializer=kessel_dot_inventory_dot_v1beta2_dot_report__resource__response__pb2.ReportResourceResponse.SerializeToString,
             ),
             'DeleteResource': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteResource,
-                    request_deserializer=kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2.DeleteResourceRequest.FromString,
-                    response_serializer=kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2.DeleteResourceResponse.SerializeToString,
+                    request_deserializer=kessel_dot_inventory_dot_v1beta2_dot_delete__resource__request__pb2.DeleteResourceRequest.FromString,
+                    response_serializer=kessel_dot_inventory_dot_v1beta2_dot_delete__resource__response__pb2.DeleteResourceResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -80,8 +83,8 @@ class KesselResourceService(object):
             request,
             target,
             '/kessel.inventory.v1beta2.KesselResourceService/ReportResource',
-            kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2.ReportResourceRequest.SerializeToString,
-            kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2.ReportResourceResponse.FromString,
+            kessel_dot_inventory_dot_v1beta2_dot_report__resource__request__pb2.ReportResourceRequest.SerializeToString,
+            kessel_dot_inventory_dot_v1beta2_dot_report__resource__response__pb2.ReportResourceResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -107,8 +110,8 @@ class KesselResourceService(object):
             request,
             target,
             '/kessel.inventory.v1beta2.KesselResourceService/DeleteResource',
-            kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2.DeleteResourceRequest.SerializeToString,
-            kessel_dot_inventory_dot_v1beta2_dot_resource__service__pb2.DeleteResourceResponse.FromString,
+            kessel_dot_inventory_dot_v1beta2_dot_delete__resource__request__pb2.DeleteResourceRequest.SerializeToString,
+            kessel_dot_inventory_dot_v1beta2_dot_delete__resource__response__pb2.DeleteResourceResponse.FromString,
             options,
             channel_credentials,
             insecure,
