@@ -5,12 +5,19 @@ from kessel.inventory.v1beta2 import (
     resource_representations_pb2,
     representation_metadata_pb2,
     report_resource_request_pb2,
-    delete_resource_request_pb2
+    delete_resource_request_pb2,
+    check_request_pb2,
+    check_service_pb2_grpc,
+    allowed_pb2,
+    subject_reference_pb2,
+    resource_reference_pb2,
+    reporter_reference_pb2,
+    check_for_update_request_pb2
 )
 from google.protobuf import struct_pb2
 
 
-def run():
+def runResourceLifecycle():
     channel = grpc.insecure_channel("localhost:9000")
     stub = resource_service_pb2_grpc.KesselResourceServiceStub(channel)
 
@@ -73,5 +80,66 @@ def run():
         print(f"Details: {e.details()}")
 
 
+def runAuthLifecycle():
+
+    channel = grpc.insecure_channel("localhost:9000")
+    stub = check_service_pb2_grpc.KesselCheckServiceStub(channel)
+
+    # Prepare the subject
+    subject = subject_reference_pb2.SubjectReference(
+        resource=resource_reference_pb2.ResourceReference(
+            resource_id="bob",
+            resource_type="principal",
+            reporter=reporter_reference_pb2.ReporterReference(
+                type="rbac"
+            )
+        )
+    )
+
+    # Prepare the parent object
+    parent = resource_reference_pb2.ResourceReference(
+        resource_id="bob_club",
+        resource_type="group",
+        reporter=reporter_reference_pb2.ReporterReference(
+            type="rbac"
+        )
+    )
+
+    # 1. Perform /authz/check
+    check_request = check_request_pb2.CheckRequest(
+        subject=subject,
+        relation="member",
+        object=parent,
+    )
+
+    try:
+        check_response = stub.Check(check_request)
+        print("Check response received successfully")
+        print(check_response)
+    except grpc.RpcError as e:
+        print("gRPC error occurred during Check:")
+        print(f"Code: {e.code()}")
+        print(f"Details: {e.details()}")
+        raise
+
+    # 2. Perform /authz/checkforupdate
+    checkforupdate_request = check_for_update_request_pb2.CheckForUpdateRequest(
+        subject=subject,
+        relation="member",
+        object=parent,
+    )
+
+    try:
+        checkforupdate_response = stub.CheckForUpdate(checkforupdate_request)
+        print("CheckForUpdate response received successfully")
+        print(checkforupdate_response)
+    except grpc.RpcError as e:
+        print("gRPC error occurred during CheckForUpdate:")
+        print(f"Code: {e.code()}")
+        print(f"Details: {e.details()}")
+
+
+
 if __name__ == "__main__":
-    run()
+    #runResourceLifecycle()
+    runAuthLifecycle()
