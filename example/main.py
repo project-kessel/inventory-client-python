@@ -1,5 +1,5 @@
 import grpc
-from kessel.inventory.v1beta2 import (
+from src.kessel.inventory.v1beta2 import (
     resource_pb2,
     inventory_service_pb2_grpc,
     resource_representations_pb2,
