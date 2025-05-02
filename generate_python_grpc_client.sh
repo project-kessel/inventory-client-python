@@ -40,3 +40,4 @@ deactivate
 
 echo "Removing virtual environment..."
 rm -rf "${VENV_DIR}"
+rm -rf "${PROTO_OUT_DIR}"
