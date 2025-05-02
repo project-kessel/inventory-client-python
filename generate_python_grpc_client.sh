@@ -35,6 +35,10 @@ python -m grpc_tools.protoc \
     --grpc_python_out="${PYTHON_OUT_DIR}" \
     $(find "${PROTO_OUT_DIR}" -name "*.proto")
 
+echo "Adding missing __init__.py files..."
+# Find all directories under src/kessel/inventory and ensure they have __init__.py
+find "${PYTHON_OUT_DIR}/kessel/inventory" -type d -exec touch {}/__init__.py \;
+
 echo "Deactivating virtual environment..."
 deactivate
 
