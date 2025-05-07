@@ -1,3 +1,4 @@
+
 import grpc
 from src.kessel.inventory.v1beta2 import (
     resource_pb2,
@@ -5,10 +6,10 @@ from src.kessel.inventory.v1beta2 import (
     resource_representations_pb2,
     representation_metadata_pb2,
     report_resource_request_pb2,
-    delete_resource_request_pb2,
-    resource_reference_pb2,
-    reporter_reference_pb2
+
 )
+
+
 from google.protobuf import struct_pb2
 
 
@@ -54,24 +55,9 @@ def run():
         resource=resource
     )
 
-    delete_request = delete_resource_request_pb2.DeleteResourceRequest(
-        reference=resource_reference_pb2.ResourceReference(
-            resource_type="host",
-            resource_id="854589f0-3be7-4cad-8bcd-45e18f33cb81",
-            reporter=reporter_reference_pb2.ReporterReference(
-                type="HBI"
-            )
-        )
-    )
-
-    # Send gRPC request
     try:
         response = stub.ReportResource(request)
         print("Resource reported successfully")
-        print(response)
-
-        response = stub.DeleteResource(delete_request)
-        print("Resource deleted successfully")
         print(response)
     except grpc.RpcError as e:
         print("gRPC error occurred:")
