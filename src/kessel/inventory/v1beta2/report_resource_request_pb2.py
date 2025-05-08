@@ -23,10 +23,11 @@ _sym_db = _symbol_database.Default()
 
 
 from kessel.inventory.v1beta2 import resource_pb2 as kessel_dot_inventory_dot_v1beta2_dot_resource__pb2
+from kessel.inventory.v1beta2 import write_visibility_pb2 as kessel_dot_inventory_dot_v1beta2_dot_write__visibility__pb2
 from buf.validate import validate_pb2 as buf_dot_validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6kessel/inventory/v1beta2/report_resource_request.proto\x12\x18kessel.inventory.v1beta2\x1a\'kessel/inventory/v1beta2/resource.proto\x1a\x1b\x62uf/validate/validate.proto\"l\n\x15ReportResourceRequest\x12<\n\x08resource\x18\x01 \x01(\x0b\x32\".kessel.inventory.v1beta2.ResourceB\x06\xbaH\x03\xc8\x01\x01\x12\x15\n\rwait_for_sync\x18\x02 \x01(\x08\x42r\n(org.project_kessel.api.inventory.v1beta2P\x01ZDgithub.com/project-kessel/inventory-api/api/kessel/inventory/v1beta2b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6kessel/inventory/v1beta2/report_resource_request.proto\x12\x18kessel.inventory.v1beta2\x1a\'kessel/inventory/v1beta2/resource.proto\x1a/kessel/inventory/v1beta2/write_visibility.proto\x1a\x1b\x62uf/validate/validate.proto\"\xa4\x01\n\x15ReportResourceRequest\x12<\n\x08resource\x18\x01 \x01(\x0b\x32\".kessel.inventory.v1beta2.ResourceB\x06\xbaH\x03\xc8\x01\x01\x12M\n\x10write_visibility\x18\x02 \x01(\x0e\x32).kessel.inventory.v1beta2.WriteVisibilityB\x08\xbaH\x05\x82\x01\x02\x10\x01\x42r\n(org.project_kessel.api.inventory.v1beta2P\x01ZDgithub.com/project-kessel/inventory-api/api/kessel/inventory/v1beta2b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,6 +37,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n(org.project_kessel.api.inventory.v1beta2P\001ZDgithub.com/project-kessel/inventory-api/api/kessel/inventory/v1beta2'
   _globals['_REPORTRESOURCEREQUEST'].fields_by_name['resource']._loaded_options = None
   _globals['_REPORTRESOURCEREQUEST'].fields_by_name['resource']._serialized_options = b'\272H\003\310\001\001'
-  _globals['_REPORTRESOURCEREQUEST']._serialized_start=154
-  _globals['_REPORTRESOURCEREQUEST']._serialized_end=262
+  _globals['_REPORTRESOURCEREQUEST'].fields_by_name['write_visibility']._loaded_options = None
+  _globals['_REPORTRESOURCEREQUEST'].fields_by_name['write_visibility']._serialized_options = b'\272H\005\202\001\002\020\001'
+  _globals['_REPORTRESOURCEREQUEST']._serialized_start=204
+  _globals['_REPORTRESOURCEREQUEST']._serialized_end=368
 # @@protoc_insertion_point(module_scope)

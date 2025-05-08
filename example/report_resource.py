@@ -14,7 +14,7 @@ from google.protobuf import struct_pb2
 
 
 def run():
-    channel = grpc.insecure_channel("localhost:9000")
+    channel = grpc.insecure_channel("172.19.0.8:9081")
     stub = inventory_service_pb2_grpc.KesselInventoryServiceStub(channel)
 
     common_struct = struct_pb2.Struct()
