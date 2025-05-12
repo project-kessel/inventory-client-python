@@ -1,22 +1,18 @@
-
 import grpc
-from src.kessel.inventory.v1beta2 import (
-    resource_pb2,
+from google.protobuf import struct_pb2
+from kessel.inventory.v1beta2 import (
     inventory_service_pb2_grpc,
     resource_representations_pb2,
     representation_metadata_pb2,
     report_resource_request_pb2,
-
 )
 
 
-from google.protobuf import struct_pb2
-
-
 def run():
-    channel = grpc.insecure_channel("172.19.0.8:9081")
+    channel = grpc.insecure_channel("localhost:9000")
     stub = inventory_service_pb2_grpc.KesselInventoryServiceStub(channel)
 
+    # Directly build your Structs
     common_struct = struct_pb2.Struct()
     common_struct.update({
         "workspace_id": "6eb10953-4ec9-4feb-838f-ba43a60880bf"
@@ -43,24 +39,19 @@ def run():
         reporter=reporter_struct
     )
 
-    resource = resource_pb2.Resource(
+    request = report_resource_request_pb2.ReportResourceRequest(
         type="host",
-        reporter_type="HBI",
+        reporter_type="hbi",
         reporter_instance_id="0a2a430e-1ad9-4304-8e75-cc6fd3b5441a",
         representations=representations
     )
 
-    # Wrap in ReportResourceRequest
-    request = report_resource_request_pb2.ReportResourceRequest(
-        resource=resource
-    )
-
     try:
         response = stub.ReportResource(request)
-        print("Resource reported successfully")
+        print("✅ Resource reported successfully:")
         print(response)
     except grpc.RpcError as e:
-        print("gRPC error occurred:")
+        print("❌ gRPC error occurred:")
         print(f"Code: {e.code()}")
         print(f"Details: {e.details()}")
 

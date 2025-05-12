@@ -9,7 +9,7 @@ from src.kessel.inventory.v1beta2 import (
 
 
 def run():
-    channel = grpc.insecure_channel("172.19.0.12:9081")
+    channel = grpc.insecure_channel("localhost:9000")
     stub = inventory_service_pb2_grpc.KesselInventoryServiceStub(channel)
 
 
