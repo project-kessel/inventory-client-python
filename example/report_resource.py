@@ -1,21 +1,18 @@
 import grpc
-from src.kessel.inventory.v1beta2 import (
-    resource_pb2,
+from google.protobuf import struct_pb2
+from kessel.inventory.v1beta2 import (
     inventory_service_pb2_grpc,
     resource_representations_pb2,
     representation_metadata_pb2,
     report_resource_request_pb2,
-    delete_resource_request_pb2,
-    resource_reference_pb2,
-    reporter_reference_pb2
 )
-from google.protobuf import struct_pb2
 
 
 def run():
     channel = grpc.insecure_channel("localhost:9000")
     stub = inventory_service_pb2_grpc.KesselInventoryServiceStub(channel)
 
+    # Directly build your Structs
     common_struct = struct_pb2.Struct()
     common_struct.update({
         "workspace_id": "6eb10953-4ec9-4feb-838f-ba43a60880bf"
@@ -42,39 +39,19 @@ def run():
         reporter=reporter_struct
     )
 
-    resource = resource_pb2.Resource(
+    request = report_resource_request_pb2.ReportResourceRequest(
         type="host",
-        reporter_type="HBI",
+        reporter_type="hbi",
         reporter_instance_id="0a2a430e-1ad9-4304-8e75-cc6fd3b5441a",
         representations=representations
     )
 
-    # Wrap in ReportResourceRequest
-    request = report_resource_request_pb2.ReportResourceRequest(
-        resource=resource
-    )
-
-    delete_request = delete_resource_request_pb2.DeleteResourceRequest(
-        reference=resource_reference_pb2.ResourceReference(
-            resource_type="host",
-            resource_id="854589f0-3be7-4cad-8bcd-45e18f33cb81",
-            reporter=reporter_reference_pb2.ReporterReference(
-                type="HBI"
-            )
-        )
-    )
-
-    # Send gRPC request
     try:
         response = stub.ReportResource(request)
-        print("Resource reported successfully")
-        print(response)
-
-        response = stub.DeleteResource(delete_request)
-        print("Resource deleted successfully")
+        print("✅ Resource reported successfully:")
         print(response)
     except grpc.RpcError as e:
-        print("gRPC error occurred:")
+        print("❌ gRPC error occurred:")
         print(f"Code: {e.code()}")
         print(f"Details: {e.details()}")
 
