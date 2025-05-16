@@ -5,7 +5,7 @@ import warnings
 
 from kessel.inventory.v1beta1.resources import k8s_clusters_service_pb2 as kessel_dot_inventory_dot_v1beta1_dot_resources_dot_k8s__clusters__service__pb2
 
-GRPC_GENERATED_VERSION = '1.71.0'
+GRPC_GENERATED_VERSION = '1.72.0rc1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
