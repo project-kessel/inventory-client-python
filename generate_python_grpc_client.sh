@@ -26,7 +26,7 @@ echo "Installing necessary tools inside the virtual environment..."
 pip install --upgrade pip
 
 pip install .
-pip install "grpcio-tools>=1.70.0"
+pip install "grpcio-tools>=1.72.0rc1"
 
 echo "Generating Python gRPC client code from protos..."
 python -m grpc_tools.protoc \
