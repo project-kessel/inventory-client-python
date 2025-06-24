@@ -14,7 +14,7 @@ from kessel.inventory.v1beta2 import report_resource_response_pb2 as kessel_dot_
 from kessel.inventory.v1beta2 import streamed_list_objects_request_pb2 as kessel_dot_inventory_dot_v1beta2_dot_streamed__list__objects__request__pb2
 from kessel.inventory.v1beta2 import streamed_list_objects_response_pb2 as kessel_dot_inventory_dot_v1beta2_dot_streamed__list__objects__response__pb2
 
-GRPC_GENERATED_VERSION = '1.72.0rc1'
+GRPC_GENERATED_VERSION = '1.73.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
