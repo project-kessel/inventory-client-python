@@ -1,3 +1,5 @@
+# ⛔️ This repository is no longer actively maintained. Please consider using [kessel-sdk-py](https://github.com/project-kessel/kessel-sdk-py) instead ⛔️
+
 # inventory-grpc-client-python-kessel
 
 This package is generated grpc python client from inventory-api proto files.
